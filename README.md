@@ -135,6 +135,7 @@
 - [AI inboxes are filtering your emails](https://www.vozai.net/en/email-crm/ai-inbox-email-marketing-strategy/) - How to adapt email marketing for AI-powered inbox filtering in 2026
 - [Zero-party data quizzes for segmentation](https://www.vozai.net/en/email-crm/zero-party-data-quiz-email-segmentation/) - Product recommendation quizzes that actually segment your email list
 - [Agentic checkout breaks email CRM](https://www.vozai.net/en/email-crm/agentic-checkout-first-party-data-crm-gap/) - When shoppers buy via Perplexity, ChatGPT, or Google AI Mode you may lose email and consent; how to reconnect post-purchase flows
+- [Black Friday 2026 email and SMS send plan](https://www.vozai.net/en/email-crm/black-friday-2026-email-sms-six-week-send-plan/) - Six-week calendar from list cleanup to the Cyber Monday follow-up
 - [The personalization trust ceiling](https://www.vozai.net/en/email-crm/ai-personalization-trust-gap-consumer-consent-2026/) - 27% of shoppers give AI agents nothing and 43% cut ties over data misuse; designing an email track that works without behavioral tracking
 
 ### In-App CRM
