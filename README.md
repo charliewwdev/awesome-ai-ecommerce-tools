@@ -27,6 +27,7 @@
 
 ### SEO Tools
 
+- [Dondo](https://www.dondo.com/) - Cross-platform ecommerce product SEO and AI-search readiness with product-photo and description drafts reviewed before supported publishing or export.
 - [Semrush](https://www.semrush.com/) - All-in-one SEO platform with keyword research, site audit, and competitive analysis. [Semrush vs Surfer SEO](https://www.vozai.net/en/tool-comparisons/surfer-seo-vs-semrush/) | [Semrush vs Ahrefs 2026](https://www.vozai.net/en/tool-comparisons/semrush-vs-ahrefs-ai-visibility-2026/)
 - [Screpy](https://screpy.com/) - Technical audits, rank tracking, Core Web Vitals, and monitoring for ecommerce sites. [Guide](https://screpy.com/docs/guides/getting-started/first-crawl)
 - [Surfer SEO](https://surferseo.com/) - Content optimization tool using NLP and SERP analysis. [Surfer SEO vs Semrush](https://www.vozai.net/en/tool-comparisons/surfer-seo-vs-semrush/) | [Surfer vs SE Ranking vs Semrush three-way pick](https://www.vozai.net/en/tool-comparisons/surfer-vs-se-ranking-vs-semrush/) | [Review for cross-border sellers](https://www.vozai.net/en/tool-comparisons/surfer-seo-review-cross-border-sellers/)
