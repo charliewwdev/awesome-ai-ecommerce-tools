@@ -38,6 +38,7 @@
 - [Fix over-optimized SEO content](https://www.vozai.net/en/seo/seo-content-optimization-with-ai/) - How to fix AI-generated content that stuffs keywords
 - [Sub-$100 SEO toolkit for a solo store](https://www.vozai.net/en/tool-comparisons/budget-seo-tools-under-100-solo-store-2026/) - SE Ranking vs Keysearch vs Mangools vs LowFruits, matched to the job
 - [SE Ranking vs Surfer SEO 2026](https://www.vozai.net/en/tool-comparisons/se-ranking-vs-surfer-seo/) - Full-stack SEO platform vs content optimization specialist, for budget-conscious stores
+- [SellerMind](https://thesellermind.com) - AI-powered Etsy SEO tool for listing optimization, keyword research, real-time SEO scoring, and accurate fee calculation with data-driven pricing insights.
 - [Free technical-SEO audit stack](https://www.vozai.net/en/tool-comparisons/free-technical-seo-audit-stack-indie-sites/) - GSC + Ahrefs Webmaster Tools + Screaming Frog for indie sites
 - [New multilingual site SEO: first-month case study](https://www.vozai.net/en/seo/new-multilingual-site-seo-first-month-case-study/) - hreflang, sitemaps, Bing's slow start, IndexNow, favicons and first links, using our own trilingual site [BC Class 5&7](https://bcclass.vozai.com/) as the example
 - [Programmatic SEO content tools for solo builders](https://www.vozai.net/en/tool-comparisons/programmatic-seo-content-tools-solo-dtc-2026/) - Koala vs Byword vs Frase vs Surfer
