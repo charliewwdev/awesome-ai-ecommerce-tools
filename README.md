@@ -196,18 +196,18 @@
 - [AI product photography for e-commerce](https://www.vozai.net/en/tool-comparisons/ai-product-photography-ecommerce/) - Cut costs and scale faster with AI-generated product photos
 - [AI image generator comparison 2026](https://www.vozai.net/en/tool-comparisons/ai-image-generators-ecommerce-comparison/) - Midjourney vs Firefly vs DALL-E for e-commerce
 - [Google AI Studio (Nano Banana)](https://aistudio.google.com/) - Free daily image quota via Gemini 2.5 Flash Image. [Batch product images for free](https://www.vozai.net/en/ads-copy/google-ai-studio-free-product-images-nano-banana/) - white-background, lifestyle, and try-on shots at zero cost
-- [TalkPix.ai](https://www.talkpix.ai/) - Pay-as-you-go AI tool for converting single product photos into UGC-style video ads and generating talking photo videos without subscriptions.
 
 ### AI Video & UGC Tools
 
 - [HeyGen](https://www.heygen.com/) - AI avatar video generation. [UGC tools comparison](https://www.vozai.net/en/tool-comparisons/ai-ugc-video-tools-comparison-2026/)
 - [Arcads](https://www.arcads.ai/) - AI-generated UGC-style video ads. [UGC tools comparison](https://www.vozai.net/en/tool-comparisons/ai-ugc-video-tools-comparison-2026/)
 - [Creatify](https://www.creatify.ai/) - URL-to-video ad generation. [UGC tools comparison](https://www.vozai.net/en/tool-comparisons/ai-ugc-video-tools-comparison-2026/)
-- [Orkas](https://orkas.ai/agents/video-studio/?source=gh_xinpeng) - VideoStudio turns product briefs and assets into videos inside an open-source, local-first desktop AI workforce coordinated by a Commander.
+- [Orkas](https://orkas.ai/agents/video-studio/) - VideoStudio turns product briefs and assets into videos inside an open-source, local-first desktop AI workforce coordinated by a Commander.
 - [TikTok Symphony](https://ads.tiktok.com/business/creativecenter/tools/tiktok-symphony/pc/en) - TikTok's AI creative studio powered by Dreamina Seedance 2.0. [Reference to Video tutorial (product visual consistency)](https://www.vozai.net/en/ads-copy/tiktok-symphony-dreamina-reference-to-video/)
 - [TikTok AI Fashion Video Maker](https://seller.tiktok.com/) - Generate shoppable videos from a single product image. [Tutorial](https://www.vozai.net/en/ads-copy/tiktok-shop-ai-listing-video-maker/)
 - [Google Veo 3 in Google Ads](https://ads.google.com/) - Free image-to-video built into Google Ads Asset Studio (rolled out May 6, 2026, all active accounts). [Video ad creation workflow](https://www.vozai.net/en/ads-copy/google-veo3-ads-video-creative-workflow/)
 - [Kling AI 3.0](https://klingai.com/) - AI video with reference-based product consistency across shots and native lip-sync in 5 languages (EN/ZH/JA/KO/ES). [Cross-border multilingual ad video guide](https://www.vozai.net/en/ads-copy/kling-ai-3-multilingual-video-ads-guide/)
+- [TalkPix.ai](https://www.talkpix.ai/) - Pay-as-you-go AI tool for converting single product photos into UGC-style video ads and generating talking photo videos without subscriptions.
 - [AI UGC video ads](https://www.vozai.net/en/ads-copy/ai-ugc-video-ads-ecommerce/) - Skip the creator, keep the conversions with AI-generated UGC
 - [AI virtual hosts for TikTok Shop](https://www.vozai.net/en/ads-copy/ai-virtual-host-tiktok-shop-livestream/) - Zero-barrier AI livestream selling for cross-border brands
 - [TikTok Symphony vs Meta vs Amazon video ads](https://www.vozai.net/en/tool-comparisons/tiktok-symphony-vs-meta-video-vs-amazon-video-ads/) - 2026 AI video ad tool comparison
@@ -262,7 +262,7 @@
 - [Alibaba Accio Work](https://www.vozai.net/en/seo/alibaba-accio-work-ai-agent-ecommerce/) - Alibaba's AI agent for store management
 - [AI shopping agents roundup](https://www.vozai.net/en/tool-comparisons/best-ai-shopping-agent-tools/) - AI-powered shopping assistants compared
 - [Walmart Seller Analytics search visibility score](https://www.vozai.net/en/seo/walmart-search-visibility-score-analytics/) - Read the new real-time dashboard and fix low-visibility items
-- [FlipWorth](https://flipworth.silentdirectivellc.com/?utm_source=awesome-ai-ecommerce-tools&utm_medium=resource-directory) - Photo-based resale price research for secondhand sellers: snap an item and get an estimated resale range, a buy or pass verdict, a suggested list price and where to sell it. Free to try in the browser, also on iPhone.
+- [FlipWorth](https://flipworth.silentdirectivellc.com/) - Photo-based resale price research for secondhand sellers: snap an item and get an estimated resale range, a buy or pass verdict, a suggested list price and where to sell it. Free to try in the browser, also on iPhone.
 
 ## Guides & Deep Dives
 

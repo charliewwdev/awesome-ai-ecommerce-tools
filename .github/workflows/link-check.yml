@@ -1,0 +1,148 @@
+name: Link Check
+
+# Checks two different things:
+#   pull_request  → only the URLs a PR adds to README.md (fast, blocks nothing)
+#   schedule/manual → every link in README.md, reported as a single tracking issue
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - ".lychee.toml"
+      - ".github/workflows/link-check.yml"
+  schedule:
+    # Mondays 03:17 UTC
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: link-check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changed-links:
+    name: Links added by this PR
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract added URLs from the diff
+        id: extract
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          mkdir -p .link-check
+          git diff --unified=0 "origin/${BASE_REF}...HEAD" -- README.md \
+            | grep -E '^\+' \
+            | grep -v '^+++' \
+            | grep -oE 'https?://[^][()<>"[:space:]]+' \
+            | sed -E 's/[.,;:!?]+$//' \
+            | sort -u > .link-check/urls.txt || true
+
+          count=$(wc -l < .link-check/urls.txt | tr -d ' ')
+          echo "count=${count}" >> "$GITHUB_OUTPUT"
+
+          if [ "$count" -eq 0 ]; then
+            echo "::notice title=Link check skipped::This pull request adds no new URLs."
+          else
+            # lychee extracts links from Markdown, so wrap each URL in a list item.
+            awk '{ printf "- [%s](%s)\n", $0, $0 }' .link-check/urls.txt > .link-check/changed-links.md
+            cat .link-check/changed-links.md
+          fi
+
+      - name: Check the added links
+        id: lychee
+        if: steps.extract.outputs.count != '0'
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .lychee.toml --no-progress .link-check/changed-links.md
+          fail: true
+          output: .link-check/report.md
+
+      - name: Comment the failures
+        if: steps.extract.outputs.count != '0' && steps.lychee.outputs.exit_code != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          marker='<!-- link-check-pr -->'
+          {
+            echo "$marker"
+            echo "### Links that failed in this pull request"
+            echo
+            cat .link-check/report.md
+            echo
+            echo "Fix the URL or drop the entry. Bot-blocking sites (403/429) and private addresses are already tolerated by [\`.lychee.toml\`](https://github.com/${REPO}/blob/main/.lychee.toml)."
+          } > .link-check/comment.md
+
+          existing=$(gh api --paginate "repos/${REPO}/issues/${PR_NUMBER}/comments" \
+            --jq ".[] | select(.body | startswith(\"${marker}\")) | .id" | head -n 1)
+
+          if [ -n "$existing" ]; then
+            gh api -X PATCH "repos/${REPO}/issues/comments/${existing}" -F body=@.link-check/comment.md > /dev/null
+          else
+            gh pr comment "$PR_NUMBER" --body-file .link-check/comment.md
+          fi
+
+  full-scan:
+    name: Full README scan
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare output directory
+        run: mkdir -p .link-check
+
+      - name: Scan every link
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config .lychee.toml --no-progress README.md CONTRIBUTING.md
+          fail: false
+          output: .link-check/report.md
+
+      - name: Open or update the tracking issue
+        if: steps.lychee.outputs.exit_code != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          marker='<!-- broken-link-report -->'
+          {
+            echo "$marker"
+            echo "## Broken links in README.md"
+            echo
+            echo "Found by the weekly scan on $(date -u '+%Y-%m-%d %H:%M UTC'). [Workflow run](${RUN_URL})."
+            echo
+            cat .link-check/report.md
+            echo
+            echo "Re-running the workflow rewrites this issue instead of opening a new one."
+          } > .link-check/issue.md
+
+          existing=$(gh api --paginate "repos/${REPO}/issues?state=open&per_page=100" \
+            --jq ".[] | select(.pull_request == null) | select((.body // \"\") | startswith(\"${marker}\")) | .number" \
+            | head -n 1)
+
+          if [ -n "$existing" ]; then
+            gh api -X PATCH "repos/${REPO}/issues/${existing}" -F body=@.link-check/issue.md > /dev/null
+            echo "Updated existing issue #${existing}"
+          else
+            gh issue create \
+              --title "Broken links found in README.md" \
+              --body-file .link-check/issue.md
+          fi

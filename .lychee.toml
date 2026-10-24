@@ -1,0 +1,21 @@
+# Lychee configuration for the link-check workflow.
+# Docs: https://lychee.cli.rs/usage/configuration/
+# A full scan of README.md (~385 links) passes with these settings.
+
+# Parallelism and retries keep the weekly full scan under a minute while
+# tolerating slow marketplaces and transient 5xx from CDNs.
+max_concurrency = 12
+max_retries = 2
+retry_wait_time = 2
+timeout = 20
+method = "get"
+
+# 403/429 are what bot-protected sites (Shopify admin, Google Ads, LinkedIn,
+# Cloudflare-fronted product pages) return to any automated client. Treating
+# them as valid keeps the signal on real 404s and dead domains.
+accept = ["200..=299", "403", "429"]
+
+# CI runners are ephemeral, so a cache only adds state to the job.
+cache = false
+
+exclude_all_private = true
