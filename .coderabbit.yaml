@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# CodeRabbit review settings for the awesome-ai-ecommerce-tools list.
+# Docs: https://docs.coderabbit.ai/reference/configuration
+language: "en-US"
+early_access: false
+
+reviews:
+  # Balanced feedback: catches real problems without nitpicking link-list edits.
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  collapse_walkthrough: true
+  changed_files_summary: true
+  estimate_code_review_effort: false
+  sequence_diagrams: false
+  poem: false
+  review_status: true
+  commit_status: true
+
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT MERGE"
+    base_branches:
+      - ".*"
+
+  # Images and generated artifacts never need a text review.
+  path_filters:
+    - "!**/*.png"
+    - "!**/*.jpg"
+    - "!**/*.jpeg"
+    - "!**/*.gif"
+    - "!**/*.webp"
+    - "!**/*.svg"
+    - "!**/*.ico"
+    - "!**/node_modules/**"
+
+  path_instructions:
+    - path: "README.md"
+      instructions: |
+        This repository is an Awesome list. README.md is the only product; there is no
+        application code, no build step, and no test suite. Review each added or changed
+        line against CONTRIBUTING.md and report findings in this priority order:
+
+        1. Format — every entry must be `- [Name](URL) - One-line description.`
+           Optional secondary links keep the existing bracket style:
+           `[Guide](URL)`. Flag missing descriptions, trailing whitespace, and entries
+           that break the single-line convention.
+        2. Duplicates — flag any tool, guide, or URL that already appears elsewhere in
+           README.md, including the same link added under a different section.
+        3. Placement — the entry must sit under the matching `##`/`###` section and
+           follow that section's existing ordering (tools first, then guides, with
+           alphabetical order where the section already uses it).
+        4. Link hygiene — prefer official product, docs, or changelog URLs. Flag
+           affiliate parameters (`ref=`, `aff=`, `utm_*`), URL shorteners, parked or
+           unrelated domains, and links whose path clearly does not match the entry.
+        5. Copy quality — the description must be factual and specific. Flag marketing
+           language ("revolutionary", "best-in-class", "#1", "must-have") and
+           unsupported claims such as user counts, rankings, pricing, or revenue
+           figures without a source.
+        6. Scope — flag tools outside cross-border e-commerce (SEO, ads, email/CRM,
+           content, photography/video, fulfillment, marketplaces) and entries that
+           violate the quality standards in CONTRIBUTING.md.
+
+        Do not ask for tests, CI runs, or refactors — this repository has no code.
+        Verify factual claims in the PR description against the linked page when
+        possible, and keep each finding to one comment.
+
+    - path: "CONTRIBUTING.md"
+      instructions: |
+        Keep the contribution rules consistent with the actual README structure
+        (sections, entry format, ordering). Flag rules that no longer match reality.
+
+    - path: ".github/**"
+      instructions: |
+        Review GitHub Actions workflows for least-privilege `permissions`, pinned
+        action versions (`@v4`, not `@main`), safe triggers, and no secrets echoed
+        into logs.
+
+  pre_merge_checks:
+    docstrings:
+      mode: "off"
+    title:
+      mode: "warning"
+
+  tools:
+    # Disabled: the list has long single-line entries and inline links that
+    # markdownlint reports as line-length/format noise on every PR.
+    markdownlint:
+      enabled: false
+    languagetool:
+      enabled: true
+    actionlint:
+      enabled: true
+    gitleaks:
+      enabled: true
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  # Let reviews check pricing and feature claims against the linked pages.
+  web_search:
+    enabled: true
