@@ -192,6 +192,7 @@
 - [ClearCrowds](https://www.clearcrowds.com/) - AI photo cleanup for product, listing, and marketplace images, including object removal, shadow cleanup, and batch editing.
 - [Amazon Dynamic Canvas](https://sellercentral.amazon.com/) - Free AI visual workspace inside Amazon Seller Central. [Tutorial](https://www.vozai.net/en/ads-copy/amazon-dynamic-canvas-ai-listing-visuals/)
 - [Shopify Tinker](https://www.shopify.com/) - Shopify's free AI creative suite. [Tinker vs Canva comparison](https://www.vozai.net/en/tool-comparisons/shopify-tinker-ai-creative-suite/)
+- [Lunalisa](https://luna-lisa.art) - AI creative workspace with 13 image models for product photography, marketing posters, and white-background listing images, plus image-to-video extension. Freemium.
 - [AI product photography for e-commerce](https://www.vozai.net/en/tool-comparisons/ai-product-photography-ecommerce/) - Cut costs and scale faster with AI-generated product photos
 - [AI image generator comparison 2026](https://www.vozai.net/en/tool-comparisons/ai-image-generators-ecommerce-comparison/) - Midjourney vs Firefly vs DALL-E for e-commerce
 - [Google AI Studio (Nano Banana)](https://aistudio.google.com/) - Free daily image quota via Gemini 2.5 Flash Image. [Batch product images for free](https://www.vozai.net/en/ads-copy/google-ai-studio-free-product-images-nano-banana/) - white-background, lifestyle, and try-on shots at zero cost
@@ -245,6 +246,7 @@
 - [Shopify Meta direct checkout on by default](https://www.vozai.net/en/seo/shopify-meta-muse-agent-checkout-default-2026/) - Muse agent checkout with Shop Pay enabled for eligible stores (Sept 21, 2026) plus WebMCP checkout tools; where the toggle is and whether to keep it
 - [Free AI Shopify apps for small stores 2026](https://www.vozai.net/en/tool-comparisons/free-ai-shopify-apps-small-store-2026/) - Shopify Magic, Tidio Lyro, Omnisend, and Klaviyo free tiers: real limits and a working zero-budget AI stack
 - [Bloomreach Loomi Sidekick for Shopify](https://www.vozai.net/en/tool-comparisons/bloomreach-loomi-shopify-sidekick-search-ranking/) - Query-level site-search ranking diagnostics inside Shopify admin
+- [Shopify Agentic Storefronts setup guide](https://stackarchitect.xyz/blog/shopify-agentic-storefronts-setup-guide-2026/) - Step-by-step developer implementation guide for making product data schemas readable by autonomous AI shopping agents
 
 ### eBay
 
@@ -306,6 +308,8 @@
 
 - [AI attribution tools comparison 2026](https://www.vozai.net/en/tool-comparisons/ai-attribution-tools-comparison-2026/) - Triple Whale vs Northbeam vs LayerFive: three technical approaches to fixing attribution inflation (25–40% platform overcount vs Shopify orders)
 - [Zero-cost conversion behavior stack](https://www.vozai.net/en/tool-comparisons/free-clarity-ga4-conversion-behavior-stack/) - Microsoft Clarity free heatmaps and session replay paired with GA4 to find where product and checkout pages leak
+- [CAPI Shield open-source setup](https://stackarchitect.xyz/capi-shield/) - Free, self-hosted Meta Conversions API (CAPI) setup to fix server-side tracking discrepancies caused by browser tracking restrictions
+- [TikTok Events API server workflow](https://stackarchitect.xyz/tiktok-events-api-shopify/) - Zero-cost automated server-side tracking for Shopify via Make.com to close browser attribution gaps
 
 ### Operations
 
